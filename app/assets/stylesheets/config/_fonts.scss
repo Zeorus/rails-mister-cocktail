@@ -14,3 +14,23 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+@font-face {
+  font-family: "Joshico";
+  src: asset-url('Joshico-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: "FuturaPT";
+  font-weight: lighter;
+  src: asset-url('FuturaPTLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: "FuturaPT";
+  font-weight: medium;
+  src: asset-url('FuturaPTMedium.woff') format('woff');
+}
+
+$my-headers-font: "Joshico";
+$my-body-font: "FuturaPT";
