@@ -18,8 +18,14 @@
         <%= link_to "Edit", edit_cocktail_path(@cocktail), class: "edit-btn" %>
       </div>
     </div>
-    <div id="img-big"><%= image_tag("cocktails/#{@cocktail.image}") %></div>
+    <% if @cocktail.photo.attached? %>
+      <div id="img-big"><%= cl_image_tag @cocktail.photo.key %></div>
+    <% else %>
+      <div id="img-big"><%= image_tag "cocktails/missing_img.jpg" %></div>
+    <% end %>
   </div>
 </div>
 
 <%= render 'shared/modaldose' %>
+
+<% console %>

@@ -4,6 +4,7 @@
     <%= f.input :price, input_html: { type: 'number' } %>
     <%= f.input :prep_time %>
     <%= f.input :number_of_pers %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit class: 'my-primary-btn', id: 'btn-submit' %>
   <% end %>
 </div>

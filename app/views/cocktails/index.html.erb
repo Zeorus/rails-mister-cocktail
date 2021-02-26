@@ -10,7 +10,11 @@
         <%= link_to cocktail_path(cocktail) do %>
           <div class="card-cocktail">
             <h2 class="card-name"><%= cocktail.name %></h2>
-            <div class="card-img"><%= image_tag("cocktails/#{cocktail.image}") %></div>
+            <% if cocktail.photo.attached? %>
+              <div class="card-img"><%= cl_image_tag cocktail.photo.key %></div>
+            <% else %>
+              <div class="card-img"><%= image_tag "cocktails/missing_img.jpg" %></div>
+            <% end %>
           </div>
         <% end %>
       <% end %>
