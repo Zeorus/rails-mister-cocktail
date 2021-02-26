@@ -19,6 +19,11 @@
   
   &:hover {
     border: 1px solid $my_primary;
+    padding: 7px 31px;
+  }
+
+  &:focus {
+    outline: 0;
   }
 }
 

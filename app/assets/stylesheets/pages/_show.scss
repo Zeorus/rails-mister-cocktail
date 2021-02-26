@@ -1,9 +1,10 @@
-.show-view {
+#show-view {
   margin-top: 86px;
   height: 500px;
   border: 1px solid $my_light;
   border-radius: 8px;
-  padding-right: 0;
+  padding: 0;
+  display: flex;
   position: relative;
 
   h1 {
@@ -58,6 +59,7 @@
 
 .ingredient {
   display: flex;
+  margin: 3px 0;
 }
 
 #btn-add-ingredient:hover {
@@ -79,12 +81,40 @@ ul {
   left: 5px;
 }
 
+#show-view-left {
+  display: flex;
+}
+
+#steps {
+  flex-grow: 7;
+  padding: 50px 60px 0 0;
+
+  li {
+    margin: 5px 0;
+  }
+}
+
+@media(max-width: 992px) { 
+  #show-view-left {
+    display: block;
+  }
+  
+  #steps {
+    flex-grow: 1;
+    padding: 0;
+
+    ol {
+      padding-left: 18px;
+    }
+  }
+}
+
 @media(max-width: 768px) {
   #img-big {
     display: none;
   }
 
-  .show-view, .ingredients {
+  #show-view, .ingredients {
     text-align: center;
     justify-content: center;
   }
@@ -92,5 +122,15 @@ ul {
   .action-btn {
     justify-content: center;
     width: 100%;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ol {
+    list-style: none;
   }
 }

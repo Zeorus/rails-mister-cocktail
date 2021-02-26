@@ -10,8 +10,9 @@
       <div class="modal-body">
         <% unless @cocktail.id.nil? %>
           <%= simple_form_for([@cocktail, @dose]) do |f| %>
-                    <%= f.input :description %>
                     <%= f.association :ingredient %>
+                    <%= f.input :quantity %>
+                    <%= f.input :description %>
                     <%= f.submit class: 'my-primary-btn', id: 'btn-submit' %>
           <% end %>
         <% end %>
