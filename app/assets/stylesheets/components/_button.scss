@@ -22,12 +22,6 @@
   }
 }
 
-.action-btn {
-  position: absolute;
-  bottom: 10px;
-  left: 5px;
-}
-
 .delete-btn, .edit-btn {
   width: 100px;
   text-align: center;
@@ -42,4 +36,8 @@
 	border: 1px solid $my_primary;
   padding: 8px 15px;
   }
+}
+
+.edit-btn {
+  padding: 8px 24px !important;
 }

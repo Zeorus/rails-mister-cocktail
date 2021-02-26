@@ -1,2 +1,52 @@
 // Import page-specific CSS files here.
 @import "cocktails";
+@import "show";
+
+h1 {
+  font-family: $my-headers-font;
+}
+
+body {
+  font-family: $my-body-font;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+  
+  &:hover {
+    color:inherit;
+  }
+}
+
+#page-container {
+  margin-top: 70px;
+}
+
+.title {
+  color: $my_secondary;
+}
+
+#hero-section {
+  margin: 0 auto;
+  margin-top: 70px;
+  background-image: asset-url('banner_img_cocktail.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  text-align: center;
+  
+  h1 {
+    color: white;
+    font-size: 60px;
+    padding-top: 80px;
+    font-weight: medium;
+  }
+  
+  p {
+    color: white;
+	  font-size: 18px;
+	  padding-top: 38px;
+  }
+}
