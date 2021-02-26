@@ -8,8 +8,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <% unless @cocktail.id.nil? %>
-          <%= simple_form_for([@cocktail, @dose]) do |f| %>
+        <% unless cocktail.id.nil? %>
+          <%= simple_form_for([cocktail, dose]) do |f| %>
                     <%= f.association :ingredient %>
                     <%= f.input :quantity %>
                     <%= f.input :description %>
