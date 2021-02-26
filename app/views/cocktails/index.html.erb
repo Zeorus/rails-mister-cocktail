@@ -1,0 +1,19 @@
+<div>
+  <div id="hero-section">
+    <h1>Virgin Cocktails</h1>
+    <p>À CONSOMMER SANS MODÉRATION</p>
+  </div>
+
+  <div class="container mt-3">
+    <div id="card-row">
+      <% @cocktails.each do |cocktail| %>
+        <%= link_to cocktail_path(cocktail) do %>
+          <div class="card-cocktail">
+            <h2 class="card-name"><%= cocktail.name %></h2>
+            <div class="card-img"><%= image_tag("cocktails/#{cocktail.image}") %></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

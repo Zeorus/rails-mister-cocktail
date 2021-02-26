@@ -1,0 +1,26 @@
+<div id="page-container">
+  <div class="container d-flex show-view">
+    <div class="flex-grow-1">
+      <h1 class="title"><%= @cocktail.name %></h1>
+      <div class="show-view-desc">
+        <span><i class="fas fa-euro-sign"></i> <%= @cocktail.price %></span>
+        <span><i class="fas fa-stopwatch"></i> <%= @cocktail.prep_time %>min</span>
+        <span><i class="fas fa-users"></i> <%= @cocktail.number_of_pers %></span>
+      </div>
+      <div class="ingredients"><h3>Ingredients</h3> <span><i class='fas fa-plus-circle' id="btn-add-ingredient"></i></span></div>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+        <div class="ingredient"><%= link_to "<i class='fas fa-trash'></i>".html_safe, cocktail_dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %><li><%= image_tag("icons/#{dose.ingredient.icon}") %> ~ <%= dose.description %> de <%= dose.ingredient.name %></li></div>
+        <% end %>
+      </ul>
+      <div class="delete-btn">
+        <%= link_to "Delete", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
+    </div>
+    <div id="img-big"><%= image_tag("cocktails/#{@cocktail.image}") %></div>
+  </div>
+</div>
+
+<%= render 'shared/modaldose' %>
+
+<% console %>

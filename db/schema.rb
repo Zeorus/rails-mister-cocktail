@@ -10,16 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_102443) do
+ActiveRecord::Schema.define(version: 2021_02_25_201511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cocktails", force: :cascade do |t|
     t.string "name"
-    t.string "image"
+    t.string "image", default: "missing_img.jpg"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "price", default: 1.0
+    t.integer "prep_time", default: 5
+    t.integer "number_of_pers", default: 2
   end
 
   create_table "doses", force: :cascade do |t|

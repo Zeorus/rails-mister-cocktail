@@ -14,5 +14,12 @@ Turbolinks.start();
 ActiveStorage.start();
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your JS functions here
+  
+  const addIngredient = document.getElementById('btn-add-ingredient');
+  if (addIngredient) {
+    addIngredient.addEventListener('click', (event) => {
+      $('#add-ingredient').modal();
+    });
+  }
+
 });
