@@ -11,12 +11,12 @@ Cocktail.destroy_all
 Ingredient.destroy_all
 
 puts "Add cocktails"
-Cocktail.create!(name: "Bikini", image: "cocktail_bikini.jpg")
-Cocktail.create!(name: "Blue Lagon", image: "cocktail_blue-lagon.jpg")
-Cocktail.create!(name: "Frozen Margarita", image: "cocktail_frozen-margarita.jpg")
-Cocktail.create!(name: "Green Fury", image: "cocktail_green-fury.jpg")
-Cocktail.create!(name: "Mangalicious", image: "cocktail_mangalicious.jpg")
-Cocktail.create!(name: "Virgin Colada", image: "cocktail_virgin-colada.jpg")
+Cocktail.create!(name: "Bikini")
+Cocktail.create!(name: "Blue Lagon")
+Cocktail.create!(name: "Frozen Margarita")
+Cocktail.create!(name: "Green Fury")
+Cocktail.create!(name: "Mangalicious")
+Cocktail.create!(name: "Virgin Colada")
 puts "cocktails created"
 
 puts "Add ingrdedients"
