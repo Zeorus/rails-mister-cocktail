@@ -1,0 +1,9 @@
+<div class="container mt-4">
+  <%= simple_form_for(@cocktail) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :price, input_html: { type: 'number' } %>
+    <%= f.input :prep_time %>
+    <%= f.input :number_of_pers %>
+    <%= f.submit class: 'my-primary-btn', id: 'btn-submit' %>
+  <% end %>
+</div>

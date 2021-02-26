@@ -13,8 +13,9 @@
         <div class="ingredient"><%= link_to "<i class='fas fa-trash'></i>".html_safe, cocktail_dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %><li><%= image_tag("icons/#{dose.ingredient.icon}") %> ~ <%= dose.description %> de <%= dose.ingredient.name %></li></div>
         <% end %>
       </ul>
-      <div class="delete-btn">
-        <%= link_to "Delete", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
+      <div class="action-btn">
+        <%= link_to "Delete", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-btn" %>
+        <%= link_to "Edit", edit_cocktail_path(@cocktail), class: "edit-btn" %>
       </div>
     </div>
     <div id="img-big"><%= image_tag("cocktails/#{@cocktail.image}") %></div>

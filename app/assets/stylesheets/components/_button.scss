@@ -1,7 +1,6 @@
 .my-primary-btn {
   background-color: $my_primary;
   color: white;
-  font-weight: bold;
   border-radius: 60px;
   margin: 0 20px 0 30px;
   padding: 8px 32px;
@@ -23,18 +22,20 @@
   }
 }
 
-.delete-btn {
+.action-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+}
+
+.delete-btn, .edit-btn {
   width: 100px;
   text-align: center;
   background-color: $my_primary;
   color: white;
-  font-weight: bold;
   border-radius: 60px;
   padding: 8px 16px;
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-  
+
   &:hover {
 	background-color: white;
 	color: $my_primary;

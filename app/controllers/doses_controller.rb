@@ -14,7 +14,7 @@ class DosesController < ApplicationController
     @dose.cocktail = @cocktail
     @dose.ingredient = @ingredient
     if @dose.save
-      redirect_to cocktail_path(@cocktail)
+      redirect_to cocktail_path(@cocktail), notice: "Ingredient was successfully added"
     else
       render 'cocktails/show'
     end
@@ -24,7 +24,7 @@ class DosesController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
     @dose = Dose.find(params[:cocktail_id])
     @dose.destroy
-    redirect_to cocktail_path(@cocktail)
+    redirect_to cocktail_path(@cocktail), notice: "Ingredient was successfully deleted"
   end
 
   private
