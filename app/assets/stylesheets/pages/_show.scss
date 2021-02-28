@@ -83,6 +83,7 @@ ul {
 
 #show-view-left {
   display: flex;
+  padding-left: 8px;
 }
 
 #steps {
@@ -92,10 +93,6 @@ ul {
   li {
     margin: 5px 0;
   }
-}
-
-#show-view-next {
-  padding-left: 8px;
 }
 
 @media(max-width: 992px) { 

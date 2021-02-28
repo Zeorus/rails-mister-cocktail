@@ -9,12 +9,14 @@
             <span><i class="fas fa-stopwatch"></i> <%= @cocktail.prep_time %>min</span>
             <span><i class="fas fa-users"></i> <%= @cocktail.number_of_pers %></span>
           </div>
-          <div class="ingredients"><h3>Ingredients</h3> <span><i class='fas fa-plus-circle' id="btn-add-ingredient"></i></span></div>
+          <div class="ingredients"><h3>Ingredients</h3><span><% if @cocktail.editable %><i class='fas fa-plus-circle' id="btn-add-ingredient"></i><% end %></span></div>
           <ul>
             <% @cocktail.doses.each do |dose| %>
               <div class="ingredient">
-                <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
-                  <i class='fas fa-trash'></i>
+                <% if @cocktail.editable %>
+                  <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class='fas fa-trash'></i>
+                  <% end %>
                 <% end %>
                   <li>
                     <%= image_tag("icons/#{dose.ingredient.icon}") %> ~ <%= dose.quantity %> <%= dose.ingredient.name %>
@@ -22,10 +24,12 @@
               </div>
             <% end %>
           </ul>
-          <div class="action-btn">
-            <%= link_to "Delete", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-btn" %>
-            <%= link_to "Edit", edit_cocktail_path(@cocktail), class: "edit-btn" %>
-          </div>
+          <% if @cocktail.editable %>
+            <div class="action-btn">
+              <%= link_to "Delete", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-btn" %>
+              <%= link_to "Edit", edit_cocktail_path(@cocktail), class: "edit-btn" %>
+            </div>
+          <% end %>
         </div>
           <div id="steps">
             <ol>
@@ -36,11 +40,13 @@
           </div>
       </div>
     </div>
-    <% if @cocktail.photo.attached? %>
-      <div id="img-big"><%= cl_image_tag @cocktail.photo.key %></div>
-    <% else %>
-      <div id="img-big"><%= image_tag "cocktails/missing_img.jpg" %></div>
-    <% end %>
+    <div id="img-big">
+      <% if @cocktail.photo.attached? %>
+        <%= cl_image_tag @cocktail.photo.key %>
+      <% else %>
+        <%= image_tag "cocktails/missing_img.jpg" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
